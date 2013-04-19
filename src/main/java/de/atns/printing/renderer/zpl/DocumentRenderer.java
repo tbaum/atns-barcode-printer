@@ -19,8 +19,8 @@ import de.atns.printing.document.DocumentElement;
 import de.atns.printing.document.Element;
 import de.atns.printing.document.Mode;
 import de.atns.printing.renderer.AbstractDocumentRenderer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -29,8 +29,7 @@ import java.io.IOException;
  */
 public class DocumentRenderer extends AbstractDocumentRenderer {
 
-    private static final Log LOG = LogFactory.getLog(DocumentRenderer.class);
-
+    private static final Logger LOG = LoggerFactory.getLogger(DocumentRenderer.class);
     private StringBuffer buffer;
 
     public DocumentRenderer(final Device device) {
@@ -67,6 +66,6 @@ public class DocumentRenderer extends AbstractDocumentRenderer {
         }
         this.buffer.append("^XZ\r\n");
         LOG.debug("Buffer: ");
-        LOG.debug(this.buffer);
+        LOG.debug(this.buffer.toString());
     }
 }

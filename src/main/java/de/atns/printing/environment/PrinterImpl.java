@@ -2,8 +2,8 @@ package de.atns.printing.environment;
 
 import de.atns.printing.device.ZPLNetworkPrinterDevice;
 import de.atns.printing.document.Mode;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.net.SocketAddress;
 
 public class PrinterImpl extends AbstractPrinterImpl {
 
-    private static final Log LOG = LogFactory.getLog(PrinterImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PrinterImpl.class);
 
     @Override public boolean canPrint(final Label lf) {
         if (this.material.equals(lf.getMaterial())) {

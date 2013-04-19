@@ -17,8 +17,8 @@ import de.atns.printing.device.Device;
 import de.atns.printing.document.DocumentElement;
 import de.atns.printing.document.Element;
 import de.atns.printing.renderer.AbstractDocumentRenderer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -31,10 +31,8 @@ import static de.atns.printing.Converter.convertMMToDots;
  */
 public class DocumentRenderer extends AbstractDocumentRenderer {
 
-    private static final Log LOG = LogFactory.getLog(DocumentRenderer.class);
-
+    private static final Logger LOG = LoggerFactory.getLogger(DocumentRenderer.class);
     private Graphics graphics;
-
     private BufferedImage image;
 
     protected DocumentRenderer(final Device device) {
